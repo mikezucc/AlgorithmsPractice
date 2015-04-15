@@ -1,4 +1,4 @@
-﻿Build started 4/15/2015 2:14:43 AM.
+﻿Build started 4/15/2015 2:22:54 PM.
      1>Project "C:\Users\mikez_000\Documents\GitHub\AlgorithmsPractice\String-Array-Matrix\Longest Palindrome\LongPalindrome1\LongPalindrome1\LongPalindrome1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -11,6 +11,9 @@
      1>c:\users\mikez_000\documents\github\algorithmspractice\string-array-matrix\longest palindrome\longpalindrome1\longpalindrome1\source.cpp(66): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\mikez_000\documents\github\algorithmspractice\string-array-matrix\longest palindrome\longpalindrome1\longpalindrome1\source.cpp(77): warning C4018: '>' : signed/unsigned mismatch
      1>c:\users\mikez_000\documents\github\algorithmspractice\string-array-matrix\longest palindrome\longpalindrome1\longpalindrome1\source.cpp(86): warning C4018: '>' : signed/unsigned mismatch
+     1>c:\users\mikez_000\documents\github\algorithmspractice\string-array-matrix\longest palindrome\longpalindrome1\longpalindrome1\source.cpp(95): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mikez_000\documents\github\algorithmspractice\string-array-matrix\longest palindrome\longpalindrome1\longpalindrome1\source.cpp(108): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mikez_000\documents\github\algorithmspractice\string-array-matrix\longest palindrome\longpalindrome1\longpalindrome1\source.cpp(131): warning C4018: '<' : signed/unsigned mismatch
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mikez_000\Documents\GitHub\AlgorithmsPractice\String-Array-Matrix\Longest Palindrome\LongPalindrome1\Debug\LongPalindrome1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\mikez_000\Documents\GitHub\AlgorithmsPractice\String-Array-Matrix\Longest Palindrome\LongPalindrome1\Debug\LongPalindrome1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mikez_000\Documents\GitHub\AlgorithmsPractice\String-Array-Matrix\Longest Palindrome\LongPalindrome1\Debug\LongPalindrome1.lib" /MACHINE:X86 Debug\Source.obj
          LongPalindrome1.vcxproj -> C:\Users\mikez_000\Documents\GitHub\AlgorithmsPractice\String-Array-Matrix\Longest Palindrome\LongPalindrome1\Debug\LongPalindrome1.exe
@@ -18,4 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.67
+Time Elapsed 00:00:00.78

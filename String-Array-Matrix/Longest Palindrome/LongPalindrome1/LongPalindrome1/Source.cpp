@@ -88,11 +88,76 @@ string findLongestPalindromeOptimized(string sampleString)
 	return longestPalin;
 }
 
+string findLongestPalinJerkAlgo(string sampleString)
+{
+	string longestPalin;
+	int palinLength;
+	for (int i = 2; i < sampleString.size(); i++)
+	{
+		char PrevPrev = sampleString.at(i - 2);
+		char Prev = sampleString.at(i - 1);
+
+		bool evenPalin = Prev == sampleString.at(i);
+		bool oddPalin = PrevPrev == sampleString.at(i);
+
+		if (oddPalin && !evenPalin)
+		{
+			// a_a
+			int k = 0;
+			bool broken = false;
+			while ((i - k - 2)>0 && (i + k) < (sampleString.length() - 1))
+			{
+				// ba_ab
+				k++;
+				PrevPrev = sampleString.at(i - k - 2);
+				char Next = sampleString.at(i + k);
+				if (Next != PrevPrev)
+				{
+					broken = true;
+					break;
+				}
+			}
+			if (!broken)
+			{
+				longestPalin = sampleString.substr(i - k - 2, i + k + 1);
+				palinLength = longestPalin.size();
+			}
+		}
+		if (evenPalin && !oddPalin)
+		{
+			// _aa
+			int k = 0;
+			bool broken = false;
+			while ((i - k - 1)>0 && (i + k) < (sampleString.length()-1))
+			{
+				// _baab
+				k++;
+				PrevPrev = sampleString.at(i - k - 1);
+				char Next = sampleString.at(i + k);
+				if (Next != PrevPrev)
+				{
+					broken = true;
+					break;
+				}
+			}
+			if (!broken)
+			{
+				longestPalin = sampleString.substr(i - k - 1, i + k + 1);
+				palinLength = longestPalin.size();
+			}
+		}
+	}
+	return longestPalin;
+}
+
 int main() {
 
 	string palinDomeEnd = "2345ljkhlj234h5l234jk5hlkjhljk3h45234lkjlongassstringforthatpalinstomeemotsnilaptahtrofgnirtsssagnol";
 	string palinDomeStart = "longassstringforthatpalinstomeemotsnilaptahtrofgnirtsssagnol2345ljkhlj234h5l234jk5hlkjhljk3h45234lkj";
 	string palinDomeMiddle = "2345ljkhlj2345dfg34h5l2longassstringforthatpalinstomeemotsnilaptahtrofgnirtsssagnol34jk5hlkj345dfgdfghljk3h45234lkj";
+	string longass1 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+	string longass2 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+	string longass3 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 	cout << "PALINSTART, with palindrome: " << "longassstringforthatpalinstomeemotsnilaptahtrofgnirtsssagnol" << endl;
 	cout << endl;
 	clock_t t1, t2, t3, t4;
@@ -117,6 +182,15 @@ int main() {
 	t2 = clock();
 	float diff1((float)t2 - (float)t1);
 	cout << "nonopt: " << diff1 << endl;
+
+	t1 = clock();
+	for (int p = 0; p < 100; p++)
+	{
+		string jerkpalin = findLongestPalinJerkAlgo(palinDomeEnd);
+	}
+	t2 = clock();
+	float diff9((float)t2 - (float)t1);
+	cout << "Jerk:   " << diff9 << endl;
 	cout << endl;
 
 	cout << "Palindrome at Beginning" << endl;
@@ -139,6 +213,15 @@ int main() {
 	t2 = clock();
 	float diff4((float)t2 - (float)t1);
 	cout << "nonopt: " << diff4 << endl;
+
+	t1 = clock();
+	for (int p = 0; p < 100; p++)
+	{
+		string jerkpalin = findLongestPalinJerkAlgo(palinDomeStart);
+	}
+	t2 = clock();
+	float diff12((float)t2 - (float)t1);
+	cout << "Jerk:   " << diff12 << endl;
 	cout << endl;
 
 	cout << "Palindrome at Middle" << endl;
@@ -161,6 +244,15 @@ int main() {
 	t2 = clock();
 	float diff5((float)t2 - (float)t1);
 	cout << "nonopt: " << diff5 << endl;
+
+	t1 = clock();
+	for (int p = 0; p < 100; p++)
+	{
+		string jerkpalin = findLongestPalinJerkAlgo(palinDomeMiddle);
+	}
+	t2 = clock();
+	float diff8((float)t2 - (float)t1);
+	cout << "Jerk:   " << diff8 << endl;
 
 	return 0;
 }
