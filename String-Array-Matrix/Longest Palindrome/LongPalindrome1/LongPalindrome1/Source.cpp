@@ -119,8 +119,11 @@ string findLongestPalinJerkAlgo(string sampleString)
 			}
 			if (!broken)
 			{
-				longestPalin = sampleString.substr(i - k - 2, i + k + 1);
-				palinLength = longestPalin.size();
+				if (palinLength < (2 * k + 1))
+				{
+					longestPalin = sampleString.substr(i - k - 2, i + k + 1);
+					palinLength = longestPalin.size();
+				}
 			}
 		}
 		if (evenPalin && !oddPalin)
@@ -142,8 +145,11 @@ string findLongestPalinJerkAlgo(string sampleString)
 			}
 			if (!broken)
 			{
-				longestPalin = sampleString.substr(i - k - 1, i + k + 1);
-				palinLength = longestPalin.size();
+				if (palinLength < (2*k))
+				{
+					longestPalin = sampleString.substr(i - k - 1, i + k + 1);
+					palinLength = longestPalin.size();
+				}
 			}
 		}
 	}
